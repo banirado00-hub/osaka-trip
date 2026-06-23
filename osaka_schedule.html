@@ -40,11 +40,15 @@
   .badge.red { background: #d85a30; }
   .add-btn { display: flex; align-items: center; justify-content: center; gap: 8px; background: #fff; border: 1.5px dashed #ccc; border-radius: 10px; padding: 10px 14px; color: #aaa; font-size: 13px; cursor: pointer; margin-top: 8px; width: 100%; }
   .add-btn:hover { border-color: #1a9e60; color: #1a9e60; }
-  .bottom-bar { position: fixed; bottom: 0; left: 0; right: 0; background: #fff; border-top: 1px solid #eee; padding: 12px 16px; display: flex; gap: 8px; }
+  .bottom-bar { position: fixed; bottom: 0; left: 0; right: 0; background: #fff; border-top: 1px solid #eee; padding: 10px 16px 6px; display: flex; flex-direction: column; gap: 6px; }
+  .bottom-btns { display: flex; gap: 8px; }
   .edit-toggle { flex: 1; padding: 10px; border-radius: 10px; border: 1px solid #e0ddd6; background: #fff; font-size: 14px; font-weight: 500; color: #555; cursor: pointer; }
   .edit-toggle.on { background: #fff3e0; border-color: #ffb74d; color: #e65100; }
-  .map-btn { display: flex; align-items: center; justify-content: center; padding: 10px 14px; border-radius: 10px; background: #e8f5ee; border: 1px solid #a3d4b8; font-size: 14px; font-weight: 500; color: #1a6640; text-decoration: none; white-space: nowrap; }
+  .map-btn { flex: 1; display: flex; align-items: center; justify-content: center; padding: 10px; border-radius: 10px; background: #e8f5ee; border: 1px solid #a3d4b8; font-size: 14px; font-weight: 500; color: #1a6640; text-decoration: none; }
   .map-btn:hover { background: #d0edde; }
+  .sync-status { font-size: 11px; color: #aaa; text-align: center; padding: 2px 0; }
+  .sync-status.ok { color: #1a9e60; }
+  .sync-status.err { color: #e74c3c; }
   .sync-status { font-size: 11px; color: #aaa; text-align: center; padding: 4px 0 0; }
   .sync-status.ok { color: #1a9e60; }
   .sync-status.err { color: #e74c3c; }
@@ -99,11 +103,11 @@
 </div>
 
 <div class="bottom-bar">
-  <a href="https://maps.app.goo.gl/tDschPfNyMwpn5fv8?g_st=i" target="_blank" class="map-btn">🗺 구글맵 보기</a>
-  <div style="flex:1">
+  <div class="bottom-btns">
+    <a href="https://maps.app.goo.gl/tDschPfNyMwpn5fv8?g_st=i" target="_blank" class="map-btn">🗺 구글맵 보기</a>
     <button class="edit-toggle" id="edit-toggle" onclick="toggleEdit()">✏️ 편집 모드</button>
-    <div class="sync-status" id="sync-status">실시간 연결 중...</div>
   </div>
+  <div class="sync-status" id="sync-status">실시간 연결 중...</div>
 </div>
 
 <div class="modal-bg" id="modal-bg" onclick="closeModal(event)">
